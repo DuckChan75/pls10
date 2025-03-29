@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFT Preference Voting</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>NFT Preference Voting</h1>
+        <p class="subtitle">Cast your vote for the NFT type you'd like to see</p>
+
+        <div class="options">
+            <div class="option" data-option="1">
+                <div class="option-icon">🎨</div>
+                <h3>Yes, I want NFT (STICKER)</h3>
+                <p>Digital sticker collectibles with unique designs</p>
+            </div>
+
+            <div class="option" data-option="2">
+                <div class="option-icon">🎁</div>
+                <h3>Yes, I want NFT (GIFTS)</h3>
+                <p>Special gift NFTs with utility and surprises</p>
+            </div>
+
+            <div class="option" data-option="3">
+                <div class="option-icon">🚫</div>
+                <h3>No, I don't want any NFT</h3>
+                <p>I'm not interested in NFT offerings</p>
+            </div>
+        </div>
+
+        <div class="captcha-container">
+            <div class="g-recaptcha" data-sitekey="6Lc39vMrAAAAALHUPJI6F6CyaoR01i2j-DrjEVeq"></div>
+            <small class="captcha-error" style="color: red; display: none;">Please complete the CAPTCHA</small>
+        </div>
+
+        <button class="vote-btn" disabled>VOTE NOW</button>
+
+        <div class="results">
+            <h2>Voting Results</h2>
+            <div class="result-item">
+                <div class="result-label">
+                    <span>NFT Stickers</span>
+                    <span class="percentage">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress progress-1" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="result-item">
+                <div class="result-label">
+                    <span>NFT Gifts</span>
+                    <span class="percentage">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress progress-2" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <div class="result-item">
+                <div class="result-label">
+                    <span>No NFTs</span>
+                    <span class="percentage">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress progress-3" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="thank-you">
+            <h2>Thank You for Voting!</h2>
+            <p>Your preference has been recorded. We'll use this feedback to shape our NFT offerings.</p>
+            <button class="vote-btn" id="view-results">VIEW RESULTS</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
