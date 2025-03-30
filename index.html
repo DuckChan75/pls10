@@ -4,41 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFT Preference Voting</title>
-    <link rel="stylesheet" href="/styles.css">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h1>NFT Preference Voting</h1>
         <p class="subtitle">Cast your vote for the NFT type you'd like to see</p>
-        
+
         <div class="options">
             <div class="option" data-option="1">
                 <div class="option-icon">🎨</div>
                 <h3>Yes, I want NFT (STICKER)</h3>
                 <p>Digital sticker collectibles with unique designs</p>
             </div>
-            
+
             <div class="option" data-option="2">
                 <div class="option-icon">🎁</div>
                 <h3>Yes, I want NFT (GIFTS)</h3>
                 <p>Special gift NFTs with utility and surprises</p>
             </div>
-            
+
             <div class="option" data-option="3">
                 <div class="option-icon">🚫</div>
                 <h3>No, I don't want any NFT</h3>
                 <p>I'm not interested in NFT offerings</p>
             </div>
         </div>
-        
-        <div class="captcha-container">
-            <div class="g-recaptcha" data-sitekey="<%= process.env.RECAPTCHA_SITE_KEY %>"></div>
-            <small class="captcha-error" style="color: red; display: none;">Please complete the CAPTCHA</small>
+
+        <!-- CAPTCHA Container -->
+        <div id="captcha-container" style="display: none;">
+            <h3>Security Verification</h3>
+            <p class="subtitle">Please rotate the image to its correct orientation to verify you're human</p>
+
+            <div class="captcha-image-container">
+                <img src="https://i.imgur.com/JqYeYn7.png" id="rotatable-image">
+            </div>
+
+            <div class="captcha-controls">
+                <button id="rotate-btn" class="captcha-btn">Rotate 90°</button>
+                <button id="verify-btn" class="captcha-btn">Verify</button>
+            </div>
+
+            <p id="captcha-message"></p>
         </div>
-        
+
         <button class="vote-btn" disabled>VOTE NOW</button>
-        
+
         <div class="results">
             <h2>Voting Results</h2>
             <div class="result-item">
@@ -50,7 +61,7 @@
                     <div class="progress progress-1" style="width: 0%"></div>
                 </div>
             </div>
-            
+
             <div class="result-item">
                 <div class="result-label">
                     <span>NFT Gifts</span>
@@ -60,7 +71,7 @@
                     <div class="progress progress-2" style="width: 0%"></div>
                 </div>
             </div>
-            
+
             <div class="result-item">
                 <div class="result-label">
                     <span>No NFTs</span>
@@ -71,7 +82,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="thank-you">
             <h2>Thank You for Voting!</h2>
             <p>Your preference has been recorded. We'll use this feedback to shape our NFT offerings.</p>
@@ -79,6 +90,6 @@
         </div>
     </div>
 
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
